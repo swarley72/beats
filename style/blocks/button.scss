@@ -1,0 +1,34 @@
+.button {
+  display: block;
+  width: 163px;
+  height: 54px;
+  border-radius: 100px;
+  background-color: $red;
+  padding: 18px 41px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $darkRed;
+  }
+
+  &--color--trasparent {
+    width: inherit;
+    height: inherit;
+    padding: 0;
+    text-transform: none;
+    font-weight: 400;
+    background-color: transparent;
+    margin-left: 15px;
+
+    &:hover {
+      background-color: transparent;
+      color: $red;
+    }
+  }
+}

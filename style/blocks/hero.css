@@ -1,0 +1,5 @@
+.hero {
+  background: url("../../img/headphones.png") left 70% center no-repeat;
+  height: 100vh;
+  min-height: 650px;
+}
