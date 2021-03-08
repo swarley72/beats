@@ -1,4 +1,4 @@
-$containerWidth: 915px;
+$containerWidth: 940px;
 $baseFontSize: 16px;
 
 // z-indexes
@@ -17,7 +17,7 @@ $white: #ffffff;
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Play:wght@400;700&display=swap");
 
 //normalize
-@import url("./layout/normalize.css");
+@import "layout/normalize";
 
 // setup
 @import "layout/base";
