@@ -656,10 +656,13 @@ img {
 }
 
 .contacts__icon {
-  width: 0.875rem;
-  height: 0.875rem;
   margin-right: 0.375rem;
   flex-shrink: 0;
+}
+
+.contacts__icon-img {
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .features {
@@ -679,9 +682,12 @@ img {
 
 .feature__icon {
   display: block;
+  margin-right: 0.625rem;
+}
+
+.feature__icon-img {
   width: 2.5rem;
   height: 2.5rem;
-  margin-right: 0.625rem;
 }
 
 .feature__text {
@@ -1244,7 +1250,7 @@ img {
 .fixed-menu {
   position: fixed;
   top: 20%;
-  right: 1%;
+  right: calc(50% - 500px);
   z-index: 100;
 }
 @media (max-width: 768px) {

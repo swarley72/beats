@@ -21,8 +21,11 @@
 }
 
 .contacts__icon {
-  width: rem(14px);
-  height: rem(14px);
   margin-right: rem(6px);
   flex-shrink: 0;
+}
+
+.contacts__icon-img {
+  width: rem(14px);
+  height: rem(14px);
 }
