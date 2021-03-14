@@ -651,18 +651,24 @@ img {
 .contacts:hover {
   color: #e01f3d;
 }
-.contacts:hover .contacts__icon {
+.contacts:hover .contacts__icon-img {
   fill: #e01f3d;
 }
 
 .contacts__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: 0.375rem;
   flex-shrink: 0;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .contacts__icon-img {
-  width: 0.875rem;
-  height: 0.875rem;
+  max-width: 100%;
+  max-height: 100%;
+  fill: #292929;
 }
 
 .features {
@@ -681,13 +687,18 @@ img {
 }
 
 .feature__icon {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
   margin-right: 0.625rem;
 }
 
 .feature__icon-img {
-  width: 2.5rem;
-  height: 2.5rem;
+  max-width: 100%;
+  max-width: 100%;
+  fill: #292929;
 }
 
 .feature__text {
@@ -899,12 +910,21 @@ img {
 }
 
 .advantage__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4.25rem;
   height: 4.25rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.advantage__icon-img {
+  max-width: 100%;
+  max-width: 100%;
+  fill: #292929;
 }
 
 .advantage__title {

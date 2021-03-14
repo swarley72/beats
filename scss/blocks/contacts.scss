@@ -4,6 +4,7 @@
   white-space: nowrap;
   flex: 0;
   transition: 0.2s;
+
   @include tablets {
     font-size: rem(18px);
   }
@@ -14,18 +15,24 @@
 
   &:hover {
     color: #e01f3d;
-    .contacts__icon {
+    .contacts__icon-img {
       fill: #e01f3d;
     }
   }
 }
 
 .contacts__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: rem(6px);
   flex-shrink: 0;
+  width: rem(14px);
+  height: rem(14px);
 }
 
 .contacts__icon-img {
-  width: rem(14px);
-  height: rem(14px);
+  max-width: 100%;
+  max-height: 100%;
+  fill: $black;
 }

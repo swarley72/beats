@@ -3,13 +3,18 @@
 }
 
 .feature__icon {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(40px);
+  height: rem(40px);
   margin-right: rem(10px);
 }
 
 .feature__icon-img {
-  width: rem(40px);
-  height: rem(40px);
+  max-width: 100%;
+  max-width: 100%;
+  fill: $black;
 }
 
 .feature__text {
