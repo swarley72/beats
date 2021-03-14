@@ -1,3 +1,12 @@
+html {
+  font-size: $baseFontSize;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +15,6 @@
 
 body {
   font-family: Play, sans-serif;
-  font-size: $baseFontSize;
   color: $grey;
   position: relative;
 }
@@ -14,13 +22,13 @@ body {
 .wrapper {
   position: relative;
   width: 100%;
-  min-width: $containerWidth + 20px;
   min-height: 100%;
   overflow: hidden;
 }
 
 .container {
-  width: $containerWidth;
+  width: 96%;
+  max-width: $containerWidth;
   margin: 0 auto;
   position: relative;
 }

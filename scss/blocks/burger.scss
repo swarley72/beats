@@ -1,0 +1,18 @@
+.burger {
+  width: 26px;
+  height: 22px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include tablets {
+    display: inline-flex;
+  }
+}
+
+.burger__line {
+  display: block;
+  background: $black;
+  border-radius: 10px;
+  height: 4px;
+}

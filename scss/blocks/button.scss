@@ -1,12 +1,12 @@
 .button {
   display: block;
-  width: 163px;
-  height: 54px;
-  border-radius: 100px;
+  width: rem(163px);
+  height: rem(54px);
+  border-radius: rem(100px);
   background-color: $red;
-  padding: 18px 41px;
+  padding: rem(18px) rem(41px);
   color: $white;
-  font-size: 16px;
+  font-size: rem(16px);
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
@@ -24,11 +24,15 @@
     text-transform: none;
     font-weight: 400;
     background-color: transparent;
-    margin-left: 15px;
+    margin-left: rem(15px);
 
     &:hover {
       background-color: transparent;
       color: $red;
+    }
+
+    @include tablets {
+      margin-left: rem(24px);
     }
   }
 }

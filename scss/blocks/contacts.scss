@@ -1,10 +1,28 @@
 .contacts {
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  flex: 0;
+  transition: 0.2s;
+  @include tablets {
+    font-size: rem(18px);
+  }
+
+  @include phones {
+    font-size: rem(16px);
+  }
+
+  &:hover {
+    color: #e01f3d;
+    .contacts__icon {
+      fill: #e01f3d;
+    }
+  }
 }
 
 .contacts__icon {
-  width: 14px;
-  height: 14px;
-  margin-right: 6px;
+  width: rem(14px);
+  height: rem(14px);
+  margin-right: rem(6px);
+  flex-shrink: 0;
 }

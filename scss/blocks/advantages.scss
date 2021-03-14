@@ -1,5 +1,9 @@
 .advantages {
   display: flex;
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .advantages__item {
@@ -10,9 +14,25 @@
   &:before {
     content: url("../img/icons/circles.png");
     position: absolute;
-    top: 58px;
+    top: rem(58px);
     right: 0;
     transform: translateX(50%);
+  }
+
+  @include tablets {
+    padding: 0 1%;
+    &::before {
+      display: none;
+    }
+  }
+
+  @include phones {
+    padding: 0;
+    margin-bottom: rem(26px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &:first-child {

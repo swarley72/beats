@@ -1,0 +1,38 @@
+.socials__list {
+  display: flex;
+}
+
+.socials__item {
+  display: block;
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socials__link {
+  display: block;
+  text-decoration: none;
+}
+
+.socials__icon {
+  width: rem(30px);
+  height: rem(30px);
+  fill: #b3b3b3;
+  transition: 0.2s;
+
+  @include tablets {
+    width: rem(32px);
+    height: rem(32px);
+  }
+
+  @include phones {
+    width: rem(24px);
+    height: rem(24px);
+  }
+
+  &:hover {
+    fill: black;
+  }
+}

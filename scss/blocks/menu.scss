@@ -1,14 +1,28 @@
+.menu {
+  padding-top: 10px;
+  @include tablets {
+    display: none;
+  }
+}
+
 .menu__list {
   font-family: "Alegreya Sans", sans-serif;
   color: $black;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .menu__item {
-  margin-right: 27px;
+  margin-right: rem(27px);
+  margin-bottom: rem(10px);
 
   &:last-child {
     margin-right: 0;
   }
+}
+
+.menu__link {
+  white-space: nowrap;
 }

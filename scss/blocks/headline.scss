@@ -1,15 +1,35 @@
 .headline {
   text-align: center;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
+  margin-bottom: rem(62px);
+
+  @include tablets {
+    margin-bottom: rem(48px);
+  }
+
+  @include phones {
+    margin-bottom: rem(48px);
+  }
 }
 
 .headline__title {
-  margin-bottom: 18px;
+  margin-bottom: rem(18px);
+
+  @include tablets {
+    margin-bottom: rem(8px);
+  }
+  @include phones {
+    margin-bottom: rem(13px);
+  }
 }
 
 .headline__subtitle {
   padding: 0 20%;
-  margin-bottom: 62px;
+
+  @include tablets {
+    padding: 0 10%;
+  }
+
+  @include phones {
+    padding: 0 5%;
+  }
 }
