@@ -9,6 +9,9 @@
   }
 }
 
+.header__contacts {
+  padding-top: 10px;
+}
 .contacts.header__contacts {
   @include tablets {
     display: none;
