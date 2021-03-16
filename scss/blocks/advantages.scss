@@ -37,6 +37,10 @@
 
   &:first-child {
     padding-left: 0;
+
+    @include tablets {
+      flex: 0.9;
+    }
   }
 
   &:last-child {
@@ -44,6 +48,10 @@
 
     &:before {
       display: none;
+    }
+
+    @include tablets {
+      flex: 0.9;
     }
   }
 }

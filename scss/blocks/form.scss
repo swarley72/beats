@@ -1,15 +1,10 @@
 .form {
   display: flex;
-  align-items: flex-start;
 
   @include tablets {
     flex-direction: column;
-    padding: 0 18%;
-  }
-
-  @include phones {
-    flex-direction: column;
-    padding: 0;
+    margin: 0 auto;
+    max-width: 466px;
   }
 }
 

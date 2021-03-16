@@ -43,7 +43,12 @@
     border-bottom-width: rem(18px);
     border-right: rem(36px) solid $red;
     transform: rotate(-45deg);
+    z-index: $z-decorations;
   }
+}
+
+.section-slider {
+  background-color: $lightGrey;
 }
 
 .section-reviews {
@@ -63,6 +68,7 @@
     border-radius: 50%;
     bottom: -2%;
     left: 4%;
+    z-index: $z-decorations;
   }
 }
 

@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
-  flex: 0;
   transition: 0.2s;
 
   @include tablets {
@@ -35,4 +34,5 @@
   max-width: 100%;
   max-height: 100%;
   fill: $black;
+  transition: 0.2s;
 }

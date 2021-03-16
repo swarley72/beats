@@ -1,5 +1,10 @@
 html {
   font-size: $baseFontSize;
+  min-width: 320px;
+
+  @include phones {
+    font-size: 2vmax;
+  }
 }
 
 html,
@@ -27,10 +32,14 @@ body {
 }
 
 .container {
-  width: 96%;
+  width: 98%;
   max-width: $containerWidth;
   margin: 0 auto;
   position: relative;
+
+  @include phones {
+    width: 96%;
+  }
 }
 
 // tag styles reset
