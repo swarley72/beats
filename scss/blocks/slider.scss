@@ -1,0 +1,78 @@
+.slider {
+  position: relative;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    // decoration
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -10px;
+      right: 17px;
+      width: 24px;
+      height: 24px;
+      background-color: $black;
+      transform: rotate(29deg);
+      z-index: $z-decorations;
+    }
+  }
+
+  &__arrow {
+    display: block;
+    position: absolute;
+    top: 54%;
+    width: rem(13px);
+    height: rem(27px);
+    z-index: 10;
+
+    @include tablets {
+      $imgSize: rem(306px);
+      top: calc(#{$imgSize} / 2 - #{rem(27px)} / 2);
+    }
+
+    &-img {
+      max-width: 100%;
+      max-height: 100%;
+      fill: none;
+      stroke: $black;
+      stroke-width: 2;
+    }
+
+    &--type--prev {
+      left: -(rem(60px));
+
+      @include tablets {
+        left: calc(50% - 14rem);
+      }
+    }
+
+    &--type--next {
+      right: rem(26px);
+
+      @include tablets {
+        right: calc(50% - 14rem);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    position: relative;
+    transition: 1s;
+
+    @include phones {
+      align-items: flex-start;
+    }
+
+    &-wrapper {
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+}

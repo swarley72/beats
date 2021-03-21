@@ -1516,49 +1516,76 @@ img {
   margin: 0 auto;
 }
 
-.products-slider {
+.slider {
   position: relative;
   width: 100%;
 }
-.products-slider__arrow {
+.slider__container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.slider__container:after {
+  content: "";
   display: block;
   position: absolute;
-  top: 50%;
+  bottom: -10px;
+  right: 17px;
+  width: 24px;
+  height: 24px;
+  background-color: #292929;
+  transform: rotate(29deg);
+  z-index: 50;
+}
+.slider__arrow {
+  display: block;
+  position: absolute;
+  top: 54%;
   width: 0.8125rem;
   height: 1.6875rem;
+  z-index: 10;
 }
 @media (max-width: 768px) {
-  .products-slider__arrow {
-    top: 20%;
+  .slider__arrow {
+    top: calc(19.125rem / 2 - 1.6875rem / 2);
   }
 }
-.products-slider__arrow-img {
+.slider__arrow-img {
   max-width: 100%;
   max-height: 100%;
   fill: none;
   stroke: #292929;
   stroke-width: 2;
 }
-.products-slider__arrow--type--prev {
-  left: -33px;
+.slider__arrow--type--prev {
+  left: -3.75rem;
 }
 @media (max-width: 768px) {
-  .products-slider__arrow--type--prev {
+  .slider__arrow--type--prev {
     left: calc(50% - 14rem);
   }
 }
-.products-slider__arrow--type--next {
-  right: 26px;
+.slider__arrow--type--next {
+  right: 1.625rem;
 }
 @media (max-width: 768px) {
-  .products-slider__arrow--type--next {
+  .slider__arrow--type--next {
     right: calc(50% - 14rem);
   }
 }
-
-.products {
+.slider__list {
   display: flex;
-  max-width: 100%;
+  position: relative;
+  transition: 1s;
+}
+@media (max-width: 480px) {
+  .slider__list {
+    align-items: flex-start;
+  }
+}
+.slider__list-wrapper {
+  display: flex;
+  position: relative;
   overflow: hidden;
 }
 
@@ -1588,9 +1615,17 @@ img {
     margin-bottom: 0;
   }
 }
+.product__col--img {
+  padding-top: 3.125rem;
+}
+@media (max-width: 768px) {
+  .product__col--img {
+    padding-top: 0;
+  }
+}
 .product__img {
-  max-width: 452px;
-  max-height: 452px;
+  max-width: 28.25rem;
+  max-height: 28.25rem;
   border-radius: 50%;
 }
 .product__img-pic {
@@ -1619,7 +1654,7 @@ img {
   fill: white;
 }
 .product__characteristics:hover .product__characteristics-drop {
-  left: 91px;
+  left: 100%;
   opacity: 1;
 }
 .product__characteristics-drop {
@@ -1662,14 +1697,19 @@ img {
   }
 }
 .product__desc {
-  padding-right: 70px;
+  padding-right: 4.375rem;
   margin-bottom: 2rem;
 }
 @media (max-width: 768px) {
   .product__desc {
     text-align: center;
     margin-bottom: 1.6875rem;
-    padding: 0 60px;
+    padding: 0 3.75rem;
+  }
+}
+@media (max-width: 480px) {
+  .product__desc {
+    padding: 0 2.125rem;
   }
 }
 .product__properties {

@@ -22,11 +22,19 @@
         margin-bottom: 0;
       }
     }
+
+    &--img {
+      padding-top: rem(50px);
+
+      @include tablets {
+        padding-top: 0;
+      }
+    }
   }
 
   &__img {
-    max-width: 452px;
-    max-height: 452px;
+    max-width: rem(452px);
+    max-height: rem(452px);
     border-radius: 50%;
 
     &-pic {
@@ -58,7 +66,7 @@
 
     &:hover {
       .product__characteristics-drop {
-        left: 91px;
+        left: 100%;
         opacity: 1;
       }
     }
@@ -104,13 +112,17 @@
   }
 
   &__desc {
-    padding-right: 70px;
+    padding-right: rem(70px);
     margin-bottom: rem(32px);
 
     @include tablets {
       text-align: center;
       margin-bottom: rem(27px);
-      padding: 0 60px;
+      padding: 0 rem(60px);
+    }
+
+    @include phones {
+      padding: 0 rem(34px);
     }
   }
 
