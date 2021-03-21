@@ -15,7 +15,7 @@
               <a href="#" class="logo"
                 ><img src="./img/logo.png" alt="beats logo" class="logo__img" />
               </a>
-              <nav class="menu">
+              <nav class="menu menu-header">
                 <ul class="menu__list">
                   <li class="menu__item">
                     <a href="#" class="menu__link">О нас</a>
@@ -173,8 +173,255 @@
             </ul>
           </div>
         </section>
-        <section class="section section-slider">
-          <div class="container"></div>
+        <section class="section section--bg--grey">
+          <div class="container">
+            <div class="products-slider">
+              <div class="products-slider__arrows">
+                <a
+                  href="#"
+                  class="products-slider__arrow products-slider__arrow--type--prev"
+                >
+                  <svg class="products-slider__arrow-img">
+                    <use xlink:href="./img/icons/sprite.svg#arrow-prev"></use>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class="products-slider__arrow products-slider__arrow--type--next"
+                >
+                  <svg class="products-slider__arrow-img">
+                    <use xlink:href="./img/icons/sprite.svg#arrow-next"></use>
+                  </svg>
+                </a>
+              </div>
+              <ul class="products">
+                <li class="products__item product">
+                  <!-- <div class="product__container"> -->
+                  <div class="product__col">
+                    <div class="product__img">
+                      <img
+                        src="./img/beats-white.png"
+                        alt="white beats"
+                        class="product__img-pic"
+                      />
+                    </div>
+                  </div>
+                  <div class="product__col">
+                    <div class="product__characteristics">
+                      <svg class="product__characteristics-img">
+                        <use xlink:href="./img/icons/sprite.svg#wheel"></use>
+                      </svg>
+                      <div class="product__characteristics-drop">
+                        <ul class="characteristics">
+                          <li class="characteristics__item characteristic">
+                            <div class="characteristic__col">
+                              <div class="characteristic__icon">
+                                <svg class="characteristic__icon-img">
+                                  <use
+                                    xlink:href="./img/icons/sprite.svg#bt"
+                                  ></use>
+                                </svg>
+                              </div>
+                              <div class="characteristic__name">Bluetooth</div>
+                            </div>
+                            <div class="characteristic__col">
+                              <div class="characteristics__">4.0</div>
+                            </div>
+                          </li>
+                          <li class="characteristics__item characteristic">
+                            <div class="characteristic__col">
+                              <div class="characteristic__icon">
+                                <svg class="characteristic__icon-img">
+                                  <use
+                                    xlink:href="./img/icons/sprite.svg#distance"
+                                  ></use>
+                                </svg>
+                              </div>
+                              <div class="characteristic__name">Дальность</div>
+                            </div>
+                            <div class="characteristic__col">
+                              <div class="characteristics__value">12 м</div>
+                            </div>
+                          </li>
+                          <li class="characteristics__item characteristic">
+                            <div class="characteristic__col">
+                              <div class="characteristic__icon">
+                                <svg class="characteristic__icon-img">
+                                  <use
+                                    xlink:href="./img/icons/sprite.svg#charger"
+                                  ></use>
+                                </svg>
+                              </div>
+                              <div class="characteristic__name">Зарядка</div>
+                            </div>
+
+                            <div class="characteristic__col">
+                              <div class="characteristics__">3 ч</div>
+                            </div>
+                          </li>
+                          <li class="characteristics__item characteristic">
+                            <div class="characteristic__col">
+                              <div class="characteristic__icon">
+                                <svg class="characteristic__icon-img">
+                                  <use
+                                    xlink:href="./img/icons/sprite.svg#weight"
+                                  ></use>
+                                </svg>
+                              </div>
+                              <div class="characteristic__name">Вес</div>
+                            </div>
+                            <div class="characteristic__col">
+                              <div class="characteristics__">215гр</div>
+                            </div>
+                          </li>
+                          <li class="characteristics__item characteristic">
+                            <div class="characteristic__col">
+                              <div class="characteristic__icon">
+                                <svg class="characteristic__icon-img">
+                                  <use
+                                    xlink:href="./img/icons/sprite.svg#sert"
+                                  ></use>
+                                </svg>
+                              </div>
+                              <div class="characteristic__name">Гарантия</div>
+                            </div>
+                            <div class="characteristic__col">
+                              <div class="characteristics__">1 год</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="product__title">
+                      beats solo 3. цвет «атласное серебро»
+                    </div>
+                    <div class="product__desc">
+                      <p>
+                        Беспроводные наушники Beats Solo3 готовы к работе в
+                        любой момент. Включите их и поднесите к своему iPhone —
+                        они мгновенно подключатся к нему.
+                      </p>
+                    </div>
+                    <ul class="product__properties properties">
+                      <li class="properties__item property">
+                        <div class="property__title">Зарядка</div>
+                        <div class="property__value"><p>2 часа</p></div>
+                      </li>
+                      <li class="property__item">
+                        <div class="property__title">Вес</div>
+                        <div class="property__value"><p>215 грамм</p></div>
+                      </li>
+                    </ul>
+                    <div class="product__footer">
+                      <div class="product__price">14 990 ₽</div>
+                      <div class="product__button">
+                        <a href="#" class="button">Заказать</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- </div> -->
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="section team">
+          <div class="container team-container">
+            <div class="team__title-wrap">
+              <h2 class="section__title">Team</h2>
+            </div>
+            <div class="team__list--desktop">
+              <ul class="team__list">
+                <li class="team__item">
+                  <div class="team__img">
+                    <img src="./img/team1.jpg" alt="" class="" />
+                  </div>
+                  <div class="team__info">
+                    <div class="team__name">Boris Boris</div>
+                    <div class="team__desc-wrap">
+                      <div class="team__desc">
+                        <div class="team__position">operator</div>
+                        <div class="team__text">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Aut, temporibus.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="team__item">
+                  <div class="team__img">
+                    <img src="./img/team1.jpg" alt="" class="" />
+                  </div>
+                  <div class="team__info">
+                    <div class="team__name">Boris Boris</div>
+                    <div class="team__desc-wrap">
+                      <div class="team__desc">
+                        <div class="team__position">operator</div>
+                        <div class="team__text">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Aut, temporibus.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="team__item">
+                  <div class="team__img">
+                    <img src="./img/team1.jpg" alt="" class="" />
+                  </div>
+                  <div class="team__info">
+                    <div class="team__name">Boris Boris</div>
+                    <div class="team__desc-wrap">
+                      <div class="team__desc">
+                        <div class="team__position">operator</div>
+                        <div class="team__text">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Aut, temporibus.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="team__item">
+                  <div class="team__img">
+                    <img src="./img/team1.jpg" alt="" class="" />
+                  </div>
+                  <div class="team__info">
+                    <div class="team__name">Boris Boris</div>
+                    <div class="team__desc-wrap">
+                      <div class="team__desc">
+                        <div class="team__position">operator</div>
+                        <div class="team__text">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Aut, temporibus.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="team__list--mobile">
+              <ul class="team__list">
+                <li class="team__item">
+                  <div class="team__name">Boris Boris</div>
+                  <div class="team__desc-wrap">
+                    <div class="team__img">
+                      <img src="./img/team1.jpg" alt="" />
+                    </div>
+                    <div class="team__position">operator</div>
+                    <div class="team__text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Eligendi, tenetur.
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
         <section class="section section-reviews">
           <div class="container">
@@ -372,37 +619,74 @@
           </footer>
         </section>
       </div>
+      <nav class="fixed-menu">
+        <ul class="fixed-menu__list">
+          <li class="fixed-menu__item fixed-menu__item--active">
+            <a href="" class="fixed-menu__link"></a>
+          </li>
+          <li class="fixed-menu__item">
+            <a href="" class="fixed-menu__link"></a>
+          </li>
+          <li class="fixed-menu__item">
+            <a href="" class="fixed-menu__link"></a>
+          </li>
+          <li class="fixed-menu__item">
+            <a href="" class="fixed-menu__link"></a>
+          </li>
+          <li class="fixed-menu__item">
+            <a href="" class="fixed-menu__link"></a>
+          </li>
+          <li class="fixed-menu__item">
+            <a href="" class="fixed-menu__link"></a>
+          </li>
+          <li class="fixed-menu__item">
+            <a href="" class="fixed-menu__link"></a>
+          </li>
+          <li class="fixed-menu__item">
+            <a href="" class="fixed-menu__link"></a>
+          </li>
+          <li class="fixed-menu__item">
+            <a href="" class="fixed-menu__link"></a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav class="fixed-menu">
-      <ul class="fixed-menu__list">
-        <li class="fixed-menu__item fixed-menu__item--active">
-          <a href="" class="fixed-menu__link"></a>
-        </li>
-        <li class="fixed-menu__item">
-          <a href="" class="fixed-menu__link"></a>
-        </li>
-        <li class="fixed-menu__item">
-          <a href="" class="fixed-menu__link"></a>
-        </li>
-        <li class="fixed-menu__item">
-          <a href="" class="fixed-menu__link"></a>
-        </li>
-        <li class="fixed-menu__item">
-          <a href="" class="fixed-menu__link"></a>
-        </li>
-        <li class="fixed-menu__item">
-          <a href="" class="fixed-menu__link"></a>
-        </li>
-        <li class="fixed-menu__item">
-          <a href="" class="fixed-menu__link"></a>
-        </li>
-        <li class="fixed-menu__item">
-          <a href="" class="fixed-menu__link"></a>
-        </li>
-        <li class="fixed-menu__item">
-          <a href="" class="fixed-menu__link"></a>
-        </li>
-      </ul>
-    </nav>
+    <div class="fullscreen-menu">
+      <div class="fullscreen-menu__close-btn">
+        <svg class="fullscreen-menu__close-btn-img">
+          <use xlink:href="./img/icons/sprite.svg#cross"></use>
+        </svg>
+      </div>
+      <nav class="menu menu--vertical">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a href="#" class="menu__link">О нас</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link"
+              ><a href="#" class="menu__link">Наушники</a></a
+            >
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Команда</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Цвета</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Отзывы</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Как мы работаем</a>
+          </li>
+          <li class="menu__item">
+            <a href href="#" class="menu__link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <script src="./js/js.js"></script>
+    <script src="./js/fullscreen-menu.js"></script>
   </body>
 </html>

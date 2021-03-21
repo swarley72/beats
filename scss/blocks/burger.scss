@@ -4,15 +4,16 @@
   display: none;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
 
   @include tablets {
     display: inline-flex;
   }
-}
 
-.burger__line {
-  display: block;
-  background: $black;
-  border-radius: 10px;
-  height: 4px;
+  &__line {
+    display: block;
+    background: $black;
+    border-radius: 10px;
+    height: 4px;
+  }
 }

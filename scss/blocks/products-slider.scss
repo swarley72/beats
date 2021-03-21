@@ -1,0 +1,40 @@
+.products-slider {
+  position: relative;
+  width: 100%;
+
+  &__arrow {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: rem(13px);
+    height: rem(27px);
+
+    @include tablets {
+      top: 20%;
+    }
+
+    &-img {
+      max-width: 100%;
+      max-height: 100%;
+      fill: none;
+      stroke: $black;
+      stroke-width: 2;
+    }
+
+    &--type--prev {
+      left: -33px;
+
+      @include tablets {
+        left: calc(50% - 14rem);
+      }
+    }
+
+    &--type--next {
+      right: 26px;
+
+      @include tablets {
+        right: calc(50% - 14rem);
+      }
+    }
+  }
+}
