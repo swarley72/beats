@@ -1537,6 +1537,9 @@ img {
   transform: rotate(29deg);
   z-index: 50;
 }
+.slider__wrapper {
+  position: relative;
+}
 .slider__arrow {
   display: block;
   position: absolute;
