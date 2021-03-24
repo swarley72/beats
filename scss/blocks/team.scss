@@ -99,9 +99,11 @@
       border-right-width: 4.5px;
       border-left-width: 4.5px;
       border-bottom: 7px solid $red;
+      transition: 0.2s;
     }
 
-    @include tablets {
+    &--active::after {
+      transform: rotate(180deg);
     }
   }
 
@@ -117,7 +119,7 @@
     &-wrap {
       height: 0;
       overflow: hidden;
-      transition: height 1s;
+      transition: height 0.5s;
     }
   }
 

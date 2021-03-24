@@ -3,16 +3,20 @@ const employeeListDesk = $(".team__name", ".team__list--desktop");
 const employeeListMobile = $(".team__name", ".team__list--mobile");
 
 function hideAccordeon(employeeList){
-  employeeList.each((index, item) => {
-    let descElem = $(item).next();
+  employeeList.each((index, employee) => {
+    let descElem = $(employee).next();
     descElem.height(0);
     descElem.removeClass("active");
+    $(employee).removeClass("team__name--active");
   });
 }
 
-function showAccordeon(descElem){
-  descElem.height("auto");
-  descElem.addClass("active");
+function showAccordeon(descWrapElem, nameElem){
+  let descElem = descWrapElem.find('.team__desc');
+  let height = descElem.css('height');
+  descWrapElem.height(height);
+  nameElem.addClass("team__name--active")
+  descWrapElem.addClass("active");
 }
 
 function isDesktop(elem) {
@@ -24,20 +28,18 @@ $(".team__name").on("click", function (){
   let desc = currentName.next();
 
   if (desc.hasClass("active")) {
-    console.log("active");
     if (isDesktop(currentName)){
       hideAccordeon(employeeListDesk);
     } else {
       hideAccordeon(employeeListMobile);
     }
   } else {
-    console.log("not active");
     if (isDesktop(currentName)){
       hideAccordeon(employeeListDesk)
     } else {
       hideAccordeon(employeeListMobile)
     }
-    showAccordeon(desc)
+    showAccordeon(desc, currentName)
   }
 
 });
