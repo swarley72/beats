@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     flex: 1;
+    min-width: 0;
 
     // decoration
     &:after {
@@ -67,7 +68,8 @@
   &__list {
     display: flex;
     position: relative;
-    transition: 1s;
+    // transition: 1s;
+    min-width: 0;
 
     @include phones {
       align-items: flex-start;
@@ -77,6 +79,7 @@
       display: flex;
       position: relative;
       overflow: hidden;
+      min-width: 0;
     }
   }
 }

@@ -1,26 +1,31 @@
 .team {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-
-  &__title {
-    &-wrap {
-      text-align: center;
-      margin-bottom: rem(55px);
-    }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
   &__list {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+
+    @include tablets {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+
     &--desktop {
       @include tablets {
         display: none;
       }
     }
+
     &--mobile {
       display: none;
+
       @include tablets {
         display: flex;
       }
@@ -28,18 +33,75 @@
   }
 
   &__item {
+    display: block;
     width: calc((100% - 60px) / 4);
     margin-right: rem(20px);
-    max-height: rem(200px);
 
     &:nth-child(4n) {
       margin-right: 0;
     }
 
     @include tablets {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
       margin-right: 0;
       max-height: none;
+      margin-bottom: rem(16px);
+    }
+  }
+
+  &__photo {
+    max-width: rem(220px);
+    max-height: rem(290px);
+    margin-bottom: rem(25px);
+
+    &-img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    @include tablets {
+      margin-bottom: rem(15px);
+    }
+
+    @include phones {
+      width: rem(138px);
+      height: rem(180px);
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__name {
+    font-size: rem(18px);
+    font-weight: 700;
+    color: $black;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: rem(11px);
+
+    // arrow
+    &:after {
+      content: "";
+      display: block;
+      margin-left: 4px;
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-right-width: 4.5px;
+      border-left-width: 4.5px;
+      border-bottom: 7px solid $red;
+    }
+
+    @include tablets {
     }
   }
 
@@ -51,33 +113,31 @@
       flex-direction: column;
       align-items: center;
     }
+
     &-wrap {
       height: 0;
-      transition: 0.2s;
       overflow: hidden;
-    }
-  }
-
-  &__name {
-    font-weight: bold;
-    font-size: rem(18px);
-    position: relative;
-    text-align: center;
-    cursor: pointer;
-
-    @include tablets {
-      margin-bottom: rem(10px);
+      transition: height 1s;
     }
   }
 
   &__position {
-    font-weight: norrmal;
     font-size: rem(16px);
+    color: $black;
+    margin-bottom: 4px;
+
+    @include tablets {
+      margin-bottom: 10px;
+    }
   }
 
   &__text {
     text-align: center;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+
+    @include tablets {
+      width: 65%;
+    }
   }
 }

@@ -1,13 +1,22 @@
-const char = document.querySelector(".product__characteristics");
-const drop = document.querySelector(".product__characteristics-drop");
+// const array = [11, 22 ,33, 44, 55, 66, 77];
 
-
-// char.addEventListener("click", () => {
-//   drop.style.left = "91px";
-//   drop.style.opacity = 1;
-
-//   char.addEventListener('mouseover', (event) => {
-//     drop.style.left = "99999px";
-//     drop.style.opacity = 0;
-//   })
+// array.forEach(function(currentValue, index, arr){
+//   console.log(index, currentValue, arr);
 // })
+
+// function forEachFn(arr, fn){
+//   for (let i = 0; i < arr.length; i++) {
+//     const currentValue = arr[i];
+//     fn(currentValue, i, arr);
+//   }
+// };
+
+// forEachFn(array, (item) => {
+//   console.log(item);
+// });
+
+// const newArray = array.filter((item) => {
+//   return item > 11;
+// });
+
+// console.log(newArray);
