@@ -1005,6 +1005,25 @@ img {
   }
 }
 
+.reviews__list {
+  position: relative;
+  min-height: 12.5rem;
+}
+
+.reviews__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.reviews__item.active {
+  position: static;
+  opacity: 1;
+}
+
 .reviews__display-inner {
   display: flex;
 }
@@ -1107,8 +1126,12 @@ img {
   border: 0.25rem solid transparent;
   overflow: hidden;
   position: relative;
+  transition: border-color 0.3s;
 }
-.interactive-avatar--active {
+.interactive-avatar.active {
+  border-color: #e01f3d;
+}
+.interactive-avatar:hover {
   border-color: #e01f3d;
 }
 @media (max-width: 480px) {

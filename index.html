@@ -3,11 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link
-      rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    /> -->
     <link rel="stylesheet" href="css/main.css" />
     <title>Beats</title>
   </head>
@@ -613,34 +608,84 @@
             <h2 class="section__title">отзывы</h2>
             <div class="reviews">
               <div class="reviews__display">
-                <div class="reviews__display-inner">
-                  <div class="reviews__avatar">
-                    <img
-                      src="./img/users/billi.jpg"
-                      alt="billie"
-                      class="reviews__avatar-img"
-                    />
-                  </div>
-                  <article class="reviews__content">
-                    <h3 class="reviews__title">Отличный звук</h3>
-                    <div class="reviews__text">
-                      <p>
-                        Я ем малыми порциями, но часто. Это повышает мою
-                        продуктивность в разы. В течение дня сижу за компьютером
-                        и часто отходить в кафе или на кухню просто не могу себе
-                        позволить. А батончик – он всегда под рукой. Это приятно
-                        и удобно.
-                      </p>
+                <ul class="reviews__list">
+                  <li class="reviews__item active" data-linked-with="one">
+                    <div class="reviews__display-inner">
+                      <div class="reviews__avatar">
+                        <img
+                          src="./img/users/billi.jpg"
+                          alt="billie"
+                          class="reviews__avatar-img"
+                        />
+                      </div>
+                      <article class="reviews__content">
+                        <h3 class="reviews__title">Отличный звук</h3>
+                        <div class="reviews__text">
+                          <p>
+                            Я ем малыми порциями, но часто. Это повышает мою
+                            продуктивность в разы. В течение дня сижу за
+                            компьютером и часто отходить в кафе или на кухню
+                            просто не могу себе позволить. А батончик – он
+                            всегда под рукой. Это приятно и удобно.
+                          </p>
+                        </div>
+                        <div class="reviews__author">Билли Айлиш</div>
+                      </article>
                     </div>
-                    <div class="reviews__author">Билли Айлиш</div>
-                  </article>
-                </div>
+                  </li>
+                  <li class="reviews__item" data-linked-with="two">
+                    <div class="reviews__display-inner">
+                      <div class="reviews__avatar">
+                        <img
+                          src="./img/users/boy.jpg"
+                          alt="boy"
+                          class="reviews__avatar-img"
+                        />
+                      </div>
+                      <article class="reviews__content">
+                        <h3 class="reviews__title">Крутой дизайн</h3>
+                        <div class="reviews__text">
+                          <p>
+                            Я ем малыми порциями, но часто. Это повышает мою
+                            продуктивность в разы. В течение дня сижу за
+                            компьютером и часто отходить в кафе или на кухню
+                            просто не могу себе позволить. А батончик – он
+                            всегда под рукой. Это приятно и удобно.
+                          </p>
+                        </div>
+                        <div class="reviews__author">Вадим Грачев</div>
+                      </article>
+                    </div>
+                  </li>
+                  <li class="reviews__item" data-linked-with="three">
+                    <div class="reviews__display-inner">
+                      <div class="reviews__avatar">
+                        <img
+                          src="./img/users/girl.jpg"
+                          alt="girl"
+                          class="reviews__avatar-img"
+                        />
+                      </div>
+                      <article class="reviews__content">
+                        <h3 class="reviews__title">На долго хватает заряда</h3>
+                        <div class="reviews__text">
+                          <p>
+                            Я ем малыми порциями, но часто. Это повышает мою
+                            продуктивность в разы. В течение дня сижу за
+                            компьютером и часто отходить в кафе или на кухню
+                            просто не могу себе позволить. А батончик – он
+                            всегда под рукой. Это приятно и удобно.
+                          </p>
+                        </div>
+                        <div class="reviews__author">Мария Орлова</div>
+                      </article>
+                    </div>
+                  </li>
+                </ul>
               </div>
               <ul class="reviews__switcher">
-                <li
-                  class="reviews__switcher-item interactive-avatar interactive-avatar--active"
-                >
-                  <a href="#" class="interactive-avatar__link"
+                <li class="reviews__switcher-item interactive-avatar active">
+                  <a href="#" class="interactive-avatar__link" data-open="one"
                     ><img
                       src="./img/users/billi.jpg"
                       alt="billie"
@@ -648,7 +693,7 @@
                   /></a>
                 </li>
                 <li class="reviews__switcher-item interactive-avatar">
-                  <a href="#" class="interactive-avatar__link"
+                  <a href="#" class="interactive-avatar__link" data-open="two"
                     ><img
                       src="./img/users/boy.jpg"
                       alt="boy"
@@ -656,7 +701,7 @@
                   /></a>
                 </li>
                 <li class="reviews__switcher-item interactive-avatar">
-                  <a href="#" class="interactive-avatar__link"
+                  <a href="#" class="interactive-avatar__link" data-open="three"
                     ><img
                       src="./img/users/girl.jpg"
                       alt="girl"
@@ -884,6 +929,7 @@
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script src="./js/team.js"></script>
+    <script src="./js/reviews.js"></script>
     <script src="./js/js.js"></script>
     <!-- <script src="./js/fullscreen-menu.js"></script> -->
     <!-- <script src="./js/form.js"></script> -->

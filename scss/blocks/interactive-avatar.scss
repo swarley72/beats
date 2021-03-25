@@ -5,8 +5,13 @@
   border: rem(4px) solid transparent;
   overflow: hidden;
   position: relative;
+  transition: border-color 0.3s;
 
-  &--active {
+  &.active {
+    border-color: $red;
+  }
+
+  &:hover {
     border-color: $red;
   }
 
