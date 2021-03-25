@@ -1665,7 +1665,6 @@ img {
 .slider__list {
   display: flex;
   position: relative;
-  min-width: 0;
 }
 @media (max-width: 480px) {
   .slider__list {
@@ -1676,7 +1675,11 @@ img {
   display: flex;
   position: relative;
   overflow: hidden;
-  min-width: 0;
+}
+.slider__list-wrapper .bx-wrapper {
+  box-shadow: none;
+  border: none;
+  background: none;
 }
 
 .product {

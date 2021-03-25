@@ -68,8 +68,6 @@
   &__list {
     display: flex;
     position: relative;
-    // transition: 1s;
-    min-width: 0;
 
     @include phones {
       align-items: flex-start;
@@ -79,7 +77,13 @@
       display: flex;
       position: relative;
       overflow: hidden;
-      min-width: 0;
+
+      .bx-wrapper {
+        // webkit-box-shadow: none;
+        box-shadow: none;
+        border: none;
+        background: none;
+      }
     }
   }
 }
