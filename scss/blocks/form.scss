@@ -82,6 +82,10 @@
       height: rem(82px);
     }
   }
+
+  &.input-error {
+    border-color: $red;
+  }
 }
 
 .form__controls {
