@@ -1,14 +1,25 @@
-const openBtn = document.querySelector(".burger");
-const closeBtn = document.querySelector(".fullscreen-menu__close-btn")
-const fullScreenMenu = document.querySelector(".fullscreen-menu");
+const openBtn = $(".burger");
+const closeBtn = $(".fullscreen-menu__close-btn")
+const fullScreenMenu = $(".fullscreen-menu");
+const menuLink = $(".menu--vertical").find(".menu__item");
 
-openBtn.addEventListener("click", e => {
-  fullScreenMenu.style.display = "flex"
+
+console.log(fullScreenMenu);
+
+
+openBtn.click(e => {
+  fullScreenMenu.css("display", "flex");
+  $("body").addClass("body--scroll--lock");
 });
 
-closeBtn.addEventListener("click", e => {
-  fullScreenMenu.style.display = "none"
+closeBtn.click(e => {
+  fullScreenMenu.css("display", "none");
+  $("body").removeClass("body--scroll--lock");
 });
 
-
-
+menuLink.click(e => {
+  e.preventDefault();
+  fullScreenMenu.css("display", "none");
+  $("body").removeClass("body--scroll--lock");
+  
+});

@@ -17,11 +17,11 @@
       flex-direction: column;
     }
 
-    &--desktop {
-      @include tablets {
-        display: none;
-      }
-    }
+    // &--desktop {
+    //   @include tablets {
+    //     display: none;
+    //   }
+    // }
 
     &--mobile {
       display: none;
@@ -63,14 +63,24 @@
     }
 
     @include tablets {
-      margin-bottom: rem(15px);
+      display: none;
     }
 
-    @include phones {
-      width: rem(138px);
-      height: rem(180px);
+    &--mobile {
+      display: none;
+
+      @include tablets {
+        display: block;
+        margin-bottom: rem(15px);
+      }
+
+      @include phones {
+        width: rem(138px);
+        height: rem(180px);
+      }
     }
   }
+
   &__info {
     display: flex;
     flex-direction: column;
@@ -98,7 +108,7 @@
       border: 0 solid transparent;
       border-right-width: 4.5px;
       border-left-width: 4.5px;
-      border-bottom: 7px solid $red;
+      border-bottom: 8px solid $red;
       transition: 0.2s;
     }
 

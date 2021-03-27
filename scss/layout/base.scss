@@ -24,6 +24,10 @@ body {
   position: relative;
 }
 
+.body--scroll--lock {
+  overflow: hidden;
+}
+
 .wrapper {
   position: relative;
   width: 100%;
