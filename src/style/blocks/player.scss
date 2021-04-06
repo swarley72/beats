@@ -1,0 +1,79 @@
+.player {
+  position: relative;
+
+  &.active {
+    .player__splash {
+      position: absolute;
+      background: url("../img/video-poster.jpg") center center / cover no-repeat;
+      // height: 100px;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__controls {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: rem(10px) rem(20px);
+    background-color: #151515;
+    bottom: 0;
+  }
+
+  &__start {
+    border: none;
+    height: rem(16px);
+    width: rem(11px);
+    background: url("../img/icons/play.svg") center center / contain no-repeat;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__playback {
+    position: relative;
+    height: rem(16px);
+    width: 70%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 4px;
+      background: #333333;
+    }
+
+    &-button {
+      position: absolute;
+      border: none;
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      background: $red;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__sound {
+    border: none;
+    height: rem(16px);
+    width: rem(11px);
+    background: url("../img/icons/sound.svg") center center / contain no-repeat;
+  }
+}
