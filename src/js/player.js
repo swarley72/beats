@@ -1,101 +1,114 @@
-let player;
-const playerContainer = document.querySelector(".player")
+(function (){
+  const playerContainer = document.querySelector(".player");
+  const playerWrapper = document.querySelector(".player__wrapper");
+  const video = document.querySelector(".player__video");
+  const playerStart = document.querySelector(".player__start");
+  const playerPlayback = document.querySelector(".player__playback");
+  const progressBar = document.querySelector(".player__playback-line");
+  const playerVideoCircle = document.querySelector(".player__playback-button");
+  const playerVolumeIcon = document.querySelector(".player__volume-icon-img");
+  const playerVolumeBar = document.querySelector(".player__volume");
+  const playerVolumeCircle = document.querySelector(".player__volume-button");
+  const playerSplash =  document.querySelector(".player__splash");
+  const redVolumeBar = document.querySelector(".player__volume-bar");
 
-function eventsInit() {
-  document.querySelector(".player__start").addEventListener("click", e => {
-    e.preventDefault();
-    
-    if (playerContainer.classList.contains("paused")) {
-      player.pauseVideo()
+  let startVolume = 0;
+  let currentVolume;
+
+
+  //play/pause video
+
+  function handlerStart() {
+    if (video.paused) {
+      video.play()
+      playerSplash.style.display = "none"
     } else {
-      player.playVideo()
+      video.pause()
+      playerSplash.style.display = "block"
     }
-  });
-
-  document.querySelector(".player__playback").addEventListener("click", e => {
-    const bar = e.currentTarget;
-    const clickedPosition = e.layerX;
-
-    const newButtonPositionPercent = (clickedPosition / bar.offsetWidth) * 100;
-    const newPlaybackPositionSec = (player.getDuration() / 100) * newButtonPositionPercent;
-    document.querySelector(".player__playback-button").style.left = `${newButtonPositionPercent}%`
-
-    player.seekTo(newPlaybackPositionSec)
-  })
-
-}
-
-function onPlayerReady() {
-  let interval;
-  const durationSec = player.getDuration();
-  document.querySelector(".player__duration-estimate").innerHTML = formatTime(durationSec)
-
-  if (typeof interval != 'undefined') {
-    clearInterval(interval);
   }
 
-  interval = setInterval(() => {
-    const completedSec = player.getCurrentTime();
-    const completedPercents = (completedSec / durationSec) * 100;
-    document.querySelector(".player__playback-button").style.left = `${completedPercents}%`
+  playerStart.addEventListener("click", handlerStart);
+  playerWrapper.addEventListener("click", handlerStart);
 
-    document.querySelector(".player__duration-completed").innerHTML = formatTime(completedSec)
-  }, 1000);
-}
 
-function formatTime(timeSec) {
-  const roundTime = Math.round(timeSec);
-  const minutes = addZero(Math.floor(roundTime / 60));
-  const seconds = addZero(roundTime - minutes * 60);
-
-  function addZero(num) {
-    return num < 10 ? `0${num}`: num;
+  //toggle play/pause icon
+  video.onplay = () => {
+    togglePlayer();
+  }
+  video.onpause = () => {
+    togglePlayer("pause");
+    
   }
 
-  return `${minutes}:${seconds}`
-}
+  function togglePlayer(action = "start") {
+    if (action == "start") {
+      playerContainer.classList.add("player__active")
+    } else {
+      playerContainer.classList.remove("player__active")
 
-function onPlayerStateChange(event) {
-  /*
-  -1 (воспроизведение видео не начато)
-  0 (воспроизведение видео завершено)
-  1 (воспроизведение)
-  2 (пауза)
-  3 (буферизация)
-  5 (видео подают реплики).
- */
-  switch (event.data){
-    case 1:
-      playerContainer.classList.add("active")
-      playerContainer.classList.add("paused")
-      
-      break;
-      
-      case 2:
-        playerContainer.classList.remove("active")
-        playerContainer.classList.remove("paused")
-      break;
-  }
-}
-
-
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('yt-player', {
-    height: '390',
-    width: '660',
-    videoId: 'l6yOamCT5BQ',
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    },
-    playerVars: {
-      controls: 0,
-      disablekb: 0,
-      showinfo: 0,
-      rel: 0,
-      autoplay: 0,
-      modestbranding: 0
     }
-  });
-}
-eventsInit();
+  }
+
+  //volume bar
+  function changeVolume(elem) {
+  // const (currentTarget) = elem;
+    const currentTarget = elem.currentTarget;
+
+    const left = currentTarget.getBoundingClientRect().left;
+    const soundBarWIdth = parseInt(getComputedStyle(currentTarget).width);
+    const newPosition = elem.pageX - left;
+    const percentValue = (newPosition / soundBarWIdth) * 100;
+    const circleWidth = parseInt(getComputedStyle(playerVolumeCircle).width)
+
+    video.volume = percentValue / 100;
+    playerVolumeCircle.style.left = `${percentValue}%`;
+    redVolumeBar.style.width = `${percentValue - circleWidth}%`;
+  }
+
+  function toggleSound() {
+    playerVolumeIcon.classList.toggle("muted")
+    
+    const redVolumeBar = document.querySelector(".player__volume-bar");
+    if (video.volume == 0) {
+      video.volume = currentVolume;
+      playerVolumeCircle.style.left = `${currentVolume * 100}%`
+      redVolumeBar.style.width = `${currentVolume * 100}%`
+      
+    } else {
+      currentVolume = video.volume;
+      video.volume = startVolume;
+      playerVolumeCircle.style.left = `${startVolume}%`
+      redVolumeBar.style.width = `${startVolume}%`
+    }
+  }
+
+  playerVolumeBar.addEventListener("click", changeVolume);
+  playerVolumeIcon.addEventListener("click", toggleSound);
+
+
+  //video 
+
+  function handleDuration(e) {
+    const barSize = parseInt(getComputedStyle(playerPlayback).width);
+    const circleWidth = parseInt(getComputedStyle(playerVideoCircle).width);
+    const offsetX = e.offsetX;
+    const newSize = offsetX + circleWidth / 2;
+    const newTime = (newSize * video.duration) / barSize;
+    video.currentTime = newTime;
+  }
+
+  function updateTime() {
+    let redBar = video.currentTime / video.duration;
+    progressBar.style.width = `${redBar * 100}%`
+
+    if (video.ended) {
+      video.currentTime = 0;
+    }
+  }
+
+  playerPlayback.addEventListener("click", handleDuration);
+  video.addEventListener("timeupdate", updateTime);
+
+
+})();

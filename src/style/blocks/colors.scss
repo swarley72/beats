@@ -19,10 +19,24 @@
 
   &__list {
     display: flex;
+
+    @include phones {
+      width: 100%;
+      justify-content: flex-end;
+    }
   }
 
   &__item {
     display: flex;
+
+    &.active {
+      @include phones {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    }
   }
 
   &__link {
@@ -54,7 +68,11 @@
     position: relative;
     width: 0;
     background: rgba(51, 53, 55, 0.9);
-    transition: 0.3s;
+    transition: 0.1s;
+
+    @include phones {
+      z-index: 100;
+    }
 
     &-text {
       font-size: rem(16px);

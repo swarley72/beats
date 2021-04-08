@@ -48,20 +48,21 @@ function getWidth(item) {
   const titlesBlocks = container.querySelectorAll(".colors__link");
   const titlesWidth = titlesBlocks[0].offsetWidth * titlesBlocks.length;
   const textContainer = item.querySelector(".colors__desc-text");
-  const paddingLeft = parseInt(window.getComputedStyle(textContainer, null).paddingLeft);
-  const paddingRight = parseInt(window.getComputedStyle(textContainer, null).paddingRight);
 
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const isTablet = (screenWidth <= 768 && screenWidth > 480);
+  const isMobile = screenWidth <= 480;
   
-  if(isMobile) {
-    itemWidth = screenWidth - titlesWidth
+  if(isTablet) {
+    itemWidth = screenWidth - titlesWidth;
+  } else if (isMobile) {
+    itemWidth = screenWidth - titlesBlocks[0].offsetWidth;
   } else {
-    itemWidth = 500
+    itemWidth = 500;
   }
 
   return {
     container: itemWidth,
-    textContainer: itemWidth - paddingLeft - paddingRight
+    textContainer: itemWidth
   }
 }
 })();

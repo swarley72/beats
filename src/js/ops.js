@@ -124,15 +124,24 @@ $("[data-scroll-to]").click(e => {
 
 if (isMobile) {
   $("body").swipe( {
+    preventDefaultEvents: false,
     //Generic swipe handler for all directions
     swipe: function(event, direction) {
       const scroller = viewportScroller();
       let scrollDirection = "";
+      let isVerticalScroll = false;
+      if (direction == "up"){
+        scrollDirection = "next";
+        isVerticalScroll = true;
+      } 
+      if (direction == "down"){
+        scrollDirection = "prev";
+        isVerticalScroll = true;
+      } 
+      if (isVerticalScroll){
+        scroller[scrollDirection]();
+      }
   
-      if (direction == "up") scrollDirection = "next";
-      if (direction == "down") scrollDirection = "prev";
-  
-      scroller[scrollDirection]();
     }
   });
   

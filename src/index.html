@@ -853,23 +853,30 @@
         >
           <div class="container player__container">
             <h2 class="section__title">как мы работаем</h2>
-            <div class="player active">
+            <div class="player">
               <div class="player__wrapper">
-                <div id="yt-player" class="player__elem"></div>
+                <!-- <div id="yt-player" class="player__elem"></div> -->
+                <video class="player__video" poster="./img/video-poster.jpg">
+                  <source src="./img/video.mp4" type="video/mp4" />
+                </video>
                 <div class="player__splash"></div>
               </div>
               <div class="player__controls">
-                <button class="player__start"></button>
+                <div class="player__start"></div>
                 <div class="player__playback">
-                  <button class="player__playback-button"></button>
+                  <div class="player__playback-line">
+                    <div class="player__playback-button"></div>
+                  </div>
                 </div>
-                <button class="player__sound"></button>
-                <div class="player__soundbar">
-                  <div class="player__soundbar-button"></div>
+                <div class="player__volume-icon">
+                  <svg class="player__volume-icon-img">
+                    <use xlink:href="./img/icons/sprite.svg#volume"></use>
+                  </svg>
                 </div>
-                <div class="player__duration">
-                  <span class="player__duration-completed">0:00</span> :
-                  <span class="player__duration-estimate">0:00</span>
+                <div class="player__volume">
+                  <div class="player__volume-bar">
+                    <div class="player__volume-button"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -890,11 +897,21 @@
                 <div class="form__row">
                   <label class="form__block">
                     <div class="form__title">Имя</div>
-                    <input type="text" name="name" class="form__input" />
+                    <input
+                      type="text"
+                      name="name"
+                      class="form__input"
+                      required
+                    />
                   </label>
                   <label class="form__block">
                     <div class="form__title">Телефон</div>
-                    <input type="text" name="phone" class="form__input" />
+                    <input
+                      type="text"
+                      name="phone"
+                      class="form__input"
+                      required
+                    />
                   </label>
                 </div>
                 <div class="form__row">
@@ -929,6 +946,7 @@
                     <textarea
                       name="comment"
                       class="form__input form__input--textarea"
+                      required
                     ></textarea>
                   </label>
                 </div>

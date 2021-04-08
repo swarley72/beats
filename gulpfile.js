@@ -21,7 +21,7 @@ sass.compiler = require('node-sass');
 
 task('clean', () => {
   console.log(env);
-  return src('dist/**/*', {read: false}).pipe(clean());
+  return src('dist/**/*.*', {read: false}).pipe(clean());
 });
 
 task("copy:html", () => {
@@ -94,6 +94,7 @@ task("watch", () => {
   watch('./src/style/**/*.scss', series("styles"));
   watch('./src/*.html', series("copy:html"));
   watch('./src/js/*.js', series("scripts"));
+  watch('./src/img/**/*', series("copy:img"));
 
 })
 
